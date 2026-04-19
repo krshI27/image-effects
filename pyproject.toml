@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "photo-fx"
+version = "0.1.0"
+description = "Unified image filter module: vx1000, tonal, watercolor."
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "pillow",
+    "opencv-python",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
