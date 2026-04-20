@@ -3,10 +3,10 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "photo-fx"
+name = "image-effects"
 version = "0.1.0"
 description = "Unified image filter module: vx1000, tonal, watercolor."
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
     "numpy",
     "pillow",
@@ -14,11 +14,16 @@ dependencies = [
     "scikit-image",
     "scikit-learn",
     "scipy",
-    "watercolor",
 ]
+# Note: `watercolor` (sibling repo) provides watercolor_physics. Install
+# editable via environment.yml `-e ../watercolor`; do not list as a PyPI dep.
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+target-version = ["py314"]
